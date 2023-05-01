@@ -1,0 +1,180 @@
+---
+title: "Automated Name Selection for the Network Scale-up Method"
+author:
+  - Adrià Fenoy
+  - Michał Bojanowski
+  - Miranda J. Lubbers
+institute: 
+  - Autonomous University of Barcelona
+  - Autonomous University of Barcelona &<br/>Kozminski University
+  - Autonomous University of Barcelona
+date: "May 2, 2023"
+bibliography: [refs.bib, zotero.bib]
+format: 
+  revealjs:
+    theme: default
+    self-contained: true
+    slide-number: c/t
+css: slides.css
+logo: logos.png
+footer: "www"
+---
+
+## How many people do you know?
+
+- Network Scale-Up Method for estimating network degree
+- Choosing subpopulations well is not straightforward
+- We propose a solution!
+
+### Outline
+
+1. Network Scale-Up Method
+2. Challenge of choosing subpopulations
+3. The Solution
+
+
+::: {.notes}
+
+- NSUM for gathering data on acquaintance relationships
+  - People mutually known by first names
+- Degree is an important characteristic of networks
+
+:::
+
+# Network Scale-Up Method
+
+## Network Scale-Up Method
+
+NSUM = Survey instrument + Statistical model
+
+- Estimating personal network sizes^[@killworth.etal_1990]
+- Estimating size(s) of hidden populations^[@killworth_estimation_1998; @killworth_social_1998]
+
+
+
+
+
+## NSUM -- survey instrument
+
+::: {.callout-tip}
+## Classic [@killworth.etal_1990]
+
+How many people do you know who `are members of [subpopulation]`?
+:::
+
+::: {.callout-tip}
+## Dichotomous [@baum2023uses]
+
+Do you know anyone who `is a member of [subpopulation]`?
+:::
+
+
+
+
+
+
+## NSUM -- survey instrument
+
+::: {.callout-tip}
+## BRIDGES survey 
+
+Now I will ask you about the people you know in **Spain in general**. I will ask about the people you know with certain characteristics. By knowing someone we understand that you know the first name of this person and you would recognize one another if you ran into them for example in the street, in a shop, or in another place. This includes both **close relationships** such as your partner, family, friends, neighbors, coworker or fellow students and **less close relationships**, such as for example people whom you have met in the associations to which you belong or who you know via other people. 
+
+These people do not have to live near you, you can also be in contact with them through social media or by phone. You may like them or not. Please do not include deceased persons, people under 18 years old, nor yourself.
+
+How many people **over the age of 18** do you know (by name and by sight) who have the following jobs, whether they are women or men?
+:::
+
+
+
+
+
+
+## NSUM -- estimation and modeling {.smaller}
+
+:::: {.columns}
+
+::: {.column}
+
+- Aggregated Relational Data (ARD)
+  - $y_{ik}$ -- number of persons from subpopulation $k$ "known" to $i$
+- Types of parameters estimated
+  - Estimated degree $d_i$
+  - Overdispersion
+  - Effects and biases
+
+:::
+
+
+::: {.column}
+
+- MLE [@killworth.etal_1990]
+- Bayesian hierarchical models
+    - @zheng_etal_2006
+    - @mccormick.etal_2010
+    - @diprete.etal_2011
+    - @feehan.etal_2016
+    - @laga.etal_2021
+    - @laga.etal_2021a (**a review**)
+    - @baum2023uses
+
+:::
+
+::::
+
+
+
+## NSUM -- subpopulations, biases and effects
+
+:::: {.columns}
+
+::: {.column}
+
+- First names
+- Occupational groups
+
+:::
+
+::: {.column}
+
+- Ethnic groups
+- Intersections with demographic groups
+
+:::
+
+::::
+
+- **Transmission error** -- ego is not aware that alter belongs to subpopulation
+- **Barrier effect** -- some egos systematically know more/fewer members of a subpopulation than under random mixing
+- **Recall error** -- ego can't recall the people he knows
+
+
+
+
+
+# Choosing subpopulations for NSUM
+
+## Subpopulations for degree estimation
+
+@mccormick.etal_2010 suggest:
+
+1. Use first names, provided that population name statistics are available
+2. Use names with a prevalence 0.1% - 0.2% -- good tradeoff between recall error and estimation precision
+3. Use subset of names for which a joint distribution of traits such as gender, age is similar to that of the overall population
+
+
+## Subpopulations for degree estimation
+
+> Another area for future methodological work is formalizing the procedure used to select names that satisfy the scaled-down condition. Our trial-and-error approached worked well here because there were only eight alter categories, but in cases with more categories, a more automated procedure would be preferable.  
+[@mccormick.etal_2010]
+
+
+
+
+
+
+## Thanks!
+
+More info: <http://coalesce-lab.com/en>    ![](nsumpaper-qrcode.png){ width=25% }
+
+![](logos.png) 
