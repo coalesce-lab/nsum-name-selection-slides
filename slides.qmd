@@ -14,9 +14,10 @@ format:
   revealjs:
     theme: default
     self-contained: true
+    self-contained-math: true
     slide-number: c/t
 css: slides.css
-logo: logos.png
+logo: fig/logos.png
 footer: "www"
 ---
 
@@ -170,11 +171,103 @@ How many people **over the age of 18** do you know (by name and by sight) who ha
 
 
 
+# Solution
 
 
+
+## The problem {.smaller}
+
+<!--
+- $\{1, ..., i, ... n\}$ -- first names in a population
+- $\{1, ..., j, ... m\}$ -- categories corresponding to the combinations of traits (e.g. regions and age groups)
+-->
+
+Number of persons in the population with name $i$ belonging to category $j$
+
+$$f_i^j$$
+
+Marginal distribution of traits in population
+
+$$f^j = \sum_{i} f_i^j$$
+
+
+Marginal distribution of traits in selected subset $S$ of names
+
+$$\hat{f}^j = \frac{\sum_{i \in S} f^j_i}{\sum_{i \in S} \sum_k f^k_i}$$
+
+## The problem {.smaller}
+
+$$\arg\min_S \sum_j D(f^j, \hat{f^j})$$
+
+Given the...
+
+- distribution of names and traits in the population ($f_i^j$) 
+
+... find a subset $S$ of names for which the selected distance measure $D(\cdot)$ comparing... 
+
+- the distribution of traits in the subset to the 
+- distribution of traits in the population 
+
+... is as small as possible.
+
+
+
+
+## Distance measures
+
+- Kullback-Leibler divergence: $D_{KL}(f^j, \hat{f}^j) = f^j \log \left(\frac{f^j}{\hat{f}^j}\right)$
+- Jensen-Shannon divergence: $D_{JS}(f^j, \tilde{f}^j) = \frac{1}{2} D_{KL}(f^j, \frac{f^j + \tilde{f}^j}{2}) + \frac{1}{2} D_{KL}(\tilde{f}^j, \frac{f^j + \tilde{f}^j}{2})$
+- Absolute distance: $D_{L1} = \left| f^j - \tilde{f}^j \right|$
+- **Quadratic distance**: $D_{L2} = \left( f^j - \tilde{f}^j \right)^2$
+
+
+
+## Quadratic problem formulation
+
+Let
+
+$$\alpha = \frac{1}{\sum_{i \in S} \sum_k f^k_i}$$
+
+then
+
+$$\arg\min_S \sum_j \left(f^j - \alpha \sum_i f^j_i x_i \right)^2$$
+
+where $x_i=1$ if name $i$ is in the subset and $x_i = 0$ otherwise
+
+
+## Algorithm
+
+![](fig/algorithm.png)
+
+# Illustration
+
+## Countries
+
+![](fig/countries-table1.png)
+
+## Candiate names
+
+![](fig/candidates-table2.png)
+
+## Hungary
+
+![](fig/heatmap_hungary.png)
+
+## Belgium
+
+![](fig/belgium.png)
+
+## Belgium
+
+![](fig/belgium_fitted.png)
+
+
+## Belgium
+
+![](fig/belgium_alpha.png)
 
 ## Thanks!
 
-More info: <http://coalesce-lab.com/en>    ![](nsumpaper-qrcode.png){ width=25% }
+More info: <http://coalesce-lab.com/en>    ![](fig/nsumpaper-qrcode.png){ width=25% }
 
-![](logos.png) 
+![](fig/logos.png) 
