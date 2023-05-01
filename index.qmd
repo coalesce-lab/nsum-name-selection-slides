@@ -18,7 +18,7 @@ format:
     slide-number: c/t
 css: slides.css
 logo: fig/logos.png
-footer: "www"
+footer: "https://bit.ly/ars2023-nsum"
 ---
 
 ## How many people do you know?
@@ -268,6 +268,14 @@ where $x_i=1$ if name $i$ is in the subset and $x_i = 0$ otherwise
 
 ## Thanks!
 
-More info: <http://coalesce-lab.com/en>    ![](fig/nsumpaper-qrcode.png){ width=25% }
+![](fig/lacaixa-foundation.png){ width=25% }
 
-![](fig/logos.png) 
+![](fig/logos.png){ width=70%} 
+
+
+Paper: <https://osf.io/preprints/socarxiv/t6pk2/>
+
+Lab: <http://coalesce-lab.com/en>    
+
+
+## References
