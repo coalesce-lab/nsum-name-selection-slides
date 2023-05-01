@@ -159,9 +159,9 @@ How many people **over the age of 18** do you know (by name and by sight) who ha
 
 @mccormick.etal_2010 suggest:
 
-1. Use first names, provided that population name statistics are available
-2. Use names with a prevalence 0.1% - 0.2% -- good tradeoff between recall error and estimation precision
-3. Use subset of names for which a joint distribution of traits such as gender, age is similar to that of the overall population
+1. Use **first names**, provided that population name statistics are available
+2. Use names with a **prevalence 0.1% - 0.2%** -- good tradeoff between recall error and estimation precision
+3. Use subset of names for which a **joint distribution of traits** such as gender, age is **similar to that of the overall population**
 
 
 ## Subpopulations for degree estimation
